@@ -22,7 +22,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('dash', function () {
-    return view('Back/dashboard');
+// Route::get('dash', function () {
+//     return view('Back/dashboard');
     
-});
+// });
+Route::get('admin/editer', 'AdminController@editer')->name('admin.editer');
+Route::resource('admin', 'AdminController');

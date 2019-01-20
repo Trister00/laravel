@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Material Dashboard Dark Edition by Creative Tim
+    Dashboard
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -17,6 +17,8 @@
   <link href="{{ asset('css/material-dashboard.css') }}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  
+  
 </head>
 
 <body class="dark-edition">
@@ -35,21 +37,21 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active  ">
-            <a class="nav-link" href="./dashboard.html">
+            <a class="nav-link" href="{{ route('admin.index') }}">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./user.html">
-              <i class="material-icons">person</i>
+            <a class="nav-link" href="{{ route('admin.create') }}">
+              <i class="material-icons">library_books</i>
               <p>Creer Poste</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+            <a class="nav-link" href="{{ route('admin.editer') }}">
               <i class="material-icons">content_paste</i>
-              <p>Table List</p>
+              <p>Editer Poste</p>
             </a>
           </li>
           <li class="nav-item ">
@@ -236,7 +238,8 @@
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="{{ asset('js/core/jquery.min.js') }}"></script>{{ asset('js/material-dashboard.js') }}
+  
+  <script src="{{ asset('js/core/jquery.min.js') }}"></script>
   <script src="{{ asset('js/core/popper.min.js') }}"></script>
   <script src="{{ asset('js/core/bootstrap-material-design.min.js') }}"></script>
   <script src="https://unpkg.com/default-passive-events"></script>
@@ -252,7 +255,10 @@
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{ asset('js/material-dashboard.js') }}"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-  <script src="../assets/demo/demo.js"></script>
+  <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+  <script>
+      CKEDITOR.replace( 'editor' );
+  </script>
   <script>
     $(document).ready(function() {
       $().ready(function() {

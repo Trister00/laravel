@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Symfony\Component\Console\Input\Input;
 
 class PostsController extends Controller
 {
@@ -25,7 +26,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view("Back/post");
+        
     }
 
     /**
@@ -36,7 +37,8 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        
     }
 
     /**

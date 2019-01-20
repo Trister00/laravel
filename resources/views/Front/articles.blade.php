@@ -9,11 +9,11 @@
                             @if (($item->image)==null)
                             <img class="card-img-top" src="{{ asset('img/img1.jpg') }}" alt="Article image" id="img-articles">
                             @else
-                            <img class="card-img-top" src="data:image/png;base64,{{base64_encode($item->image)}}" alt="Article image" id="img-articles">
+                            <img class="card-img-top" src="storage/articles/{{$item->image}}" alt="Article image" id="img-articles">
                             @endif
                                 <div class="card-body d-flex flex-column">
                                     <h3 class="card-title">{{$item->title}}</h3>
-                                    <p class="card-text">{{str_limit($item->body, 80)}}</p>
+                                    <p class="card-text">{!!str_limit($item->body, 50)!!}</p>
                                     <div class="text-right align-text-bottom">
                                         <a href="/posts/{{$item->id}}" class="btn btn-primary">Lire la Suite</a>
                                     </div>
