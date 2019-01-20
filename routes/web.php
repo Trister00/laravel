@@ -20,3 +20,9 @@ Route::resource('posts', 'PostsController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('dash', function () {
+    return view('Back/dashboard');
+    
+});
