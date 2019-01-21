@@ -23,7 +23,7 @@
   <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="{{ route('posts.index') }}">
+        <a class="navbar-brand" href="{{ route('index') }}">
           Jamal Eddine Naji </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="sr-only">Toggle navigation</span>
@@ -34,39 +34,32 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
-          <li class="dropdown nav-item">
-            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-              <i class="material-icons">apps</i> Components
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('posts.index') }}" onclick="scrollToDownload()">
+              <i class="material-icons">format_align_justify</i> Articles
             </a>
-            <div class="dropdown-menu dropdown-with-icons">
-              <a href="./index.html" class="dropdown-item">
-                <i class="material-icons">layers</i> All Components
-              </a>
-              <a href="https://demos.creative-tim.com/material-kit/docs/2.1/getting-started/introduction.html" class="dropdown-item">
-                <i class="material-icons">content_paste</i> Documentation
-              </a>
-            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
-              <i class="material-icons">cloud_download</i> Download
+              <i class="material-icons">library_books</i> Livres
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank" data-original-title="Follow us on Twitter">
-              <i class="fa fa-twitter"></i>
-            </a>
+                <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
+                  <i class="material-icons">mic</i> Interviw
+                </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank" data-original-title="Like us on Facebook">
-              <i class="fa fa-facebook-square"></i>
-            </a>
+                <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
+                  <i class="material-icons">notes</i> Poemes
+                </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank" data-original-title="Follow us on Instagram">
-              <i class="fa fa-instagram"></i>
-            </a>
+                <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
+                  <i class="material-icons">image</i> Galerie
+                </a>
           </li>
+          
         </ul>
       </div>
     </div>
@@ -96,42 +89,10 @@
 
   
   <footer class="footer" data-background-color="black">
-    <div class="container">
-      <nav class="float-left">
-        <ul>
-          <li>
-            <a href="https://www.creative-tim.com">
-              Creative Tim
-            </a>
-          </li>
-          <li>
-            <a href="https://creative-tim.com/presentation">
-              About Us
-            </a>
-          </li>
-          <li>
-            <a href="http://blog.creative-tim.com">
-              Blog
-            </a>
-          </li>
-          <li>
-            <a href="https://www.creative-tim.com/license">
-              Licenses
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div class="copyright float-right">
-        &copy;
-        <script>
-          document.write(new Date().getFullYear())
-        </script>, made with <i class="material-icons">favorite</i> by
-        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
-      </div>
-    </div>
+    
   </footer>
   <!--   Core JS Files   -->
-  <script src="{{ asset('Front/js/core/jquery.min.js') }}" type="text/javascript"></script>{{ asset('Front/js/material-kit.js')}}
+  <script src="{{ asset('Front/js/core/jquery.min.js') }}" type="text/javascript"></script>
   <script src="{{ asset('Front/js/core/popper.min.js') }}" type="text/javascript"></script>
   <script src="{{ asset('Front/js/core/bootstrap-material-design.min.js')}}" type="text/javascript"></script>
   <script src="{{ asset('Front/js/plugins/moment.min.js')}}"></script>
@@ -141,79 +102,7 @@
   <script src="{{ asset('Front/js/plugins/nouislider.min.js')}}" type="text/javascript"></script>
   <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
   <script src="{{ asset('Front/js/material-kit.js')}}" type="text/javascript"></script>
-  <script>
-    $(document).ready(function() {
-      //init DateTimePickers
-      materialKit.initFormExtendedDatetimepickers();
-
-      // Sliders Init
-      materialKit.initSliders();
-    });
-
-
-    function scrollToDownload() {
-      if ($('.section-download').length != 0) {
-        $("html, body").animate({
-          scrollTop: $('.section-download').offset().top
-        }, 1000);
-      }
-    }
-
-
-    $(document).ready(function() {
-
-      $('#facebook').sharrre({
-        share: {
-          facebook: true
-        },
-        enableHover: false,
-        enableTracking: false,
-        enableCounter: false,
-        click: function(api, options) {
-          api.simulateClick();
-          api.openPopup('facebook');
-        },
-        template: '<i class="fab fa-facebook-f"></i> Facebook',
-        url: 'https://demos.creative-tim.com/material-kit/index.html'
-      });
-
-      $('#googlePlus').sharrre({
-        share: {
-          googlePlus: true
-        },
-        enableCounter: false,
-        enableHover: false,
-        enableTracking: true,
-        click: function(api, options) {
-          api.simulateClick();
-          api.openPopup('googlePlus');
-        },
-        template: '<i class="fab fa-google-plus"></i> Google',
-        url: 'https://demos.creative-tim.com/material-kit/index.html'
-      });
-
-      $('#twitter').sharrre({
-        share: {
-          twitter: true
-        },
-        enableHover: false,
-        enableTracking: false,
-        enableCounter: false,
-        buttons: {
-          twitter: {
-            via: 'CreativeTim'
-          }
-        },
-        click: function(api, options) {
-          api.simulateClick();
-          api.openPopup('twitter');
-        },
-        template: '<i class="fab fa-twitter"></i> Twitter',
-        url: 'https://demos.creative-tim.com/material-kit/index.html'
-      });
-
-    });
-  </script>
+  
 </body>
 
 </html>

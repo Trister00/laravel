@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('Front/acc');
-});
+})->name('index');
 
 
 Route::resource('posts', 'PostsController');
