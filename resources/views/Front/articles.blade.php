@@ -13,9 +13,9 @@
                             @endif
                                 <div class="card-body d-flex flex-column">
                                     <h3 class="card-title">{{$item->title}}</h3>
-                                    <p class="card-text">{!!str_limit($item->body, 50)!!}</p>
-                                    <div class="text-right align-text-bottom">
-                                        <a href="/posts/{{$item->id}}" class="btn btn-primary">Lire la Suite</a>
+                                    {{-- <p class="card-text">{!!str_limit($item->body, 50)!!}</p> --}}
+                                    <div class="text-right">
+                                        <a href="/posts/{{$item->id}}" class="btn btn-primary">Lire l'article</a>
                                     </div>
                                 </div>
                         </div>

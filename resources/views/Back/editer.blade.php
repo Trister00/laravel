@@ -47,7 +47,7 @@
                                         <form method="POST" action="/admin/{{$item->id}}">
                                             @csrf
                                             {{ method_field('DELETE') }}
-                                            <button class="btn btn-danger" type="submit">Delete</button>
+                                            <button class="btn btn-danger" type="submit">Supprimer</button>
                                         </form>
                                   
                                 </td>

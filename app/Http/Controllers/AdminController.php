@@ -39,13 +39,16 @@ class AdminController extends Controller
         $post = new Post();
         $post->title = $request->title;
         //Image Upload
-        $fileNameWithExt = $request->file('image')->getClientOriginalName();
-        $fileName = pathinfo($fileNameWithExt,PATHINFO_FILENAME);
-        $extension= $request->file('image')->getClientOriginalExtension();
-        $fileNameToStore = $fileName.'_'.time().'_'.$extension;
-        $path = $request->file('image')->storeAs('public/articles',$fileNameToStore);
-        //
-        $post->image = $fileNameToStore;
+        if($request->hasFile('image'))
+        {
+            $fileNameWithExt = $request->file('image')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExt,PATHINFO_FILENAME);
+            $extension= $request->file('image')->getClientOriginalExtension();
+            $fileNameToStore = $fileName.'_'.time().'_'.$extension;
+            $path = $request->file('image')->storeAs('public/articles',$fileNameToStore);
+            //
+            $post->image = $fileNameToStore;
+        }
         $post->body = $request->body;
         $post->save();
         return view('Back/post');
@@ -83,7 +86,24 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $post = Post::find($id);
+        $post->title = $request->title;
+        $post->body = $request->body;
         //
+        if($request->hasFile('image'))
+        {
+            $fileNameWithExt = $request->file('image')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExt,PATHINFO_FILENAME);
+            $extension= $request->file('image')->getClientOriginalExtension();
+            $fileNameToStore = $fileName.'_'.time().'_'.$extension;
+            $path = $request->file('image')->storeAs('public/articles',$fileNameToStore);
+            //
+            $post->image = $fileNameToStore;
+        }
+        //
+        $post->save();
+        $posts= Post::all();
+        return view('Back/editer')->with('posts',$posts);
     }
 
     /**

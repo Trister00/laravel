@@ -21,7 +21,7 @@
                     <div class="row">
                       <div class="col-md-12">
                         <div class="form-group">
-                            <textarea class="form-control" rows="5" id="editor" name="body">contenu</textarea>
+                            <textarea class="form-control" rows="5" id="editor" name="body"></textarea>
                         </div>
                       </div>
                     </div>

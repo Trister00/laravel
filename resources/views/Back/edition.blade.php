@@ -7,13 +7,14 @@
                   <h4 class="card-title">Editer un  Article</h4>
                 </div>
                 <div class="card-body">
-                  <form method="POST" action="/admin{{$post->id}}" enctype="multipart/form-data">
+                  <form method="POST" action="/admin/{{$post->id}}" enctype="multipart/form-data">
                     @csrf
+                    {{ method_field('PATCH') }}
                     <div class="row">
                       <div class="col-md-5">
                         <div class="form-group">
-                          <label class="bmd-label-floating">{{$post->title}}</label>
-                          <input type="text" class="form-control" name="title" >
+                          <label class="bmd-label-floating">Titre : </label>
+                          <input type="text" class="form-control" name="title" value="{{$post->title}}">
                         </div>
                       </div>
                       
