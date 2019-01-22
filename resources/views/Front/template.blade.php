@@ -19,6 +19,12 @@
   <link href="./assets/demo/demo.css" rel="stylesheet" />
 </head>
 
+<style>
+  .pagination
+  {
+    justify-content: center; !important
+  }
+  </style>
 <body class="index-page sidebar-collapse">
   <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
     <div class="container">

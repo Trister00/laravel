@@ -1,6 +1,10 @@
 @extends('Front/template')
 @section('content')
-
+<div class="row ">
+    <div class="col-md-12">
+        {{$posts->links()}}
+    </div>
+</div>
     <div class="row">
         @if (count($posts) >0)
             @foreach ($posts as $item)
