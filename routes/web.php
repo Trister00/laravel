@@ -28,3 +28,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 // });
 Route::get('admin/editer', 'AdminController@editer')->name('admin.editer');
 Route::resource('admin', 'AdminController');
+
+Route::resource('livres','LivresController');
+Route::resource('admin/livres','AdminLivresController');
