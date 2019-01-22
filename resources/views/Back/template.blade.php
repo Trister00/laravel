@@ -60,6 +60,12 @@
               <p>Nouveau Livre</p>
             </a>
           </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{{ route('admin/livres.editer') }}">
+              <i class="material-icons">book</i>
+              <p>Editer Livres</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

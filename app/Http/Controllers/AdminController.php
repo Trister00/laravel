@@ -44,7 +44,7 @@ class AdminController extends Controller
             $fileNameWithExt = $request->file('image')->getClientOriginalName();
             $fileName = pathinfo($fileNameWithExt,PATHINFO_FILENAME);
             $extension= $request->file('image')->getClientOriginalExtension();
-            $fileNameToStore = $fileName.'_'.time().'_'.$extension;
+            $fileNameToStore = $fileName.'_'.time().'_.'.$extension;
             $path = $request->file('image')->storeAs('public/articles',$fileNameToStore);
             //
             $post->image = $fileNameToStore;

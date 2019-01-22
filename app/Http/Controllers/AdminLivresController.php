@@ -13,7 +13,7 @@ class AdminLivresController extends Controller
      */
     public function index()
     {
-        //
+        return '1';
     }
 
     /**
@@ -42,7 +42,7 @@ class AdminLivresController extends Controller
             $fileNameWithExt = $request->file('document')->getClientOriginalName();
             $fileName = pathinfo($fileNameWithExt,PATHINFO_FILENAME);
             $extension= $request->file('document')->getClientOriginalExtension();
-            $fileNameToStore = $fileName.'_'.time().'_'.$extension;
+            $fileNameToStore = $fileName.'_'.time().'_.'.$extension;
             $path = $request->file('document')->storeAs('public/livres',$fileNameToStore);
             //
             $livre->document = $fileNameToStore;
@@ -70,7 +70,8 @@ class AdminLivresController extends Controller
      */
     public function edit($id)
     {
-        //
+        $livre = Livre::find($id);
+        return view('Back/livreEdit')->with('livre',$livre);
     }
 
     /**
@@ -93,6 +94,14 @@ class AdminLivresController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $livre = Livre::find($id);
+        $livre->delete();
+        $livres = Livre::all();
+        return view('Back/livres')->with('livres',$livres);
+    }
+    public function editer()
+    {
+        $livres = Livre::all();
+        return view('Back/livres')->with('livres',$livres);
     }
 }

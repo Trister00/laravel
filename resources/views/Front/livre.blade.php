@@ -2,5 +2,5 @@
 @section('content')
     livre ici
     
-    <embed href="{{ asset('storage/livres/'.$livre->document) }}">Open the pdf!
+    <a href="{{ asset('storage/livres/'.$livre->document) }}"  target="_blank">Ouvrir le fichier</a>
 @endsection
