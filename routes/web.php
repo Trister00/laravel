@@ -30,4 +30,4 @@ Route::get('admin/editer', 'AdminController@editer')->name('admin.editer');
 Route::resource('admin', 'AdminController');
 
 Route::resource('livres','LivresController');
-Route::resource('admin/livres','AdminLivresController');
+Route::resource('admin/livres','AdminLivresController',['names' => 'admin/livres']);

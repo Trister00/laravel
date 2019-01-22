@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Livre;
 use Illuminate\Http\Request;
 
 class LivresController extends Controller
@@ -13,7 +13,8 @@ class LivresController extends Controller
      */
     public function index()
     {
-        //
+        $livres = Livre::all();
+        return view('Front/livres')->with('livres',$livres);
     }
 
     /**

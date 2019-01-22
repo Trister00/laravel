@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Livre;
 use Illuminate\Http\Request;
 
 class AdminLivresController extends Controller
@@ -23,7 +23,7 @@ class AdminLivresController extends Controller
      */
     public function create()
     {
-        //
+        return view('Back/livre');
     }
 
     /**
@@ -34,7 +34,21 @@ class AdminLivresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $livre = new Livre();
+        $livre->Titre = $request->Titre;
+        //PDF Upload
+        if($request->hasFile('document'))
+        {
+            $fileNameWithExt = $request->file('document')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExt,PATHINFO_FILENAME);
+            $extension= $request->file('document')->getClientOriginalExtension();
+            $fileNameToStore = $fileName.'_'.time().'_'.$extension;
+            $path = $request->file('document')->storeAs('public/livres',$fileNameToStore);
+            //
+            $livre->document = $fileNameToStore;
+        }
+        $livre->save();
+        return view('Back/livre');
     }
 
     /**

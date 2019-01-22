@@ -40,7 +40,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)" onclick="scrollToDownload()">
+            <a class="nav-link" href="{{ route('livres.index') }}" onclick="scrollToDownload()">
               <i class="material-icons">library_books</i> Livres
             </a>
           </li>
