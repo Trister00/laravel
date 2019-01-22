@@ -46,7 +46,8 @@ class LivresController extends Controller
      */
     public function show($id)
     {
-        //
+        $livre = Livre::find($id);
+        return view('Front/livre')->with('livre',$livre);
     }
 
     /**
